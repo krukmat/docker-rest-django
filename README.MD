@@ -6,8 +6,8 @@
 # AngularJS:
 
 ## Requirements:
-   - npm
-   - bower
+   ```- npm
+   - bower```
 
 ## Installation:
    - cd angularApp/
