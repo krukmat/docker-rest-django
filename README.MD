@@ -4,9 +4,11 @@
    - Docker compose
 
 # AngularJS:
+
 ## Requirements:
    - npm
    - bower
+
 ## Installation:
    - cd angularApp/
    - npm install
