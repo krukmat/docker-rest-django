@@ -1,0 +1,15 @@
+FROM python:2.7
+MAINTAINER Matias Kruk
+ENV PYTHONUNBUFFERED 1
+RUN apt-get update
+RUN mkdir /code
+WORKDIR /code
+ADD requirements.txt /code/
+RUN pip install -r requirements.txt
+ADD . /code/
+#RUN git clone https://github.com/wg/wrk.git
+#WORKDIR /code/wrk
+#RUN make
+#WORKDIR /code
+CMD ["gunicorn", "-c", "gunicorn_conf.py", "website.wsgi:application", "--reload"]
+EXPOSE 80

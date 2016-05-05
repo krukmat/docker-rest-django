@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Events</title>
+
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../bower_components/ng-table/dist/ng-table.css">
+  <link rel="stylesheet" href="../bower_components/fullcalendar/dist/fullcalendar.css"/>
+  <link rel="stylesheet" href="../node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css"/>
+
+  <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../bower_components/angular-resource/angular-resource.js"></script>
+  <script src="../bower_components/ng-table/dist/ng-table.min.js"></script>
+
+
+  <script type="text/javascript" src="../node_modules/angular-bootstrap-datetimepicker/node_modules/moment/min/moment.min.js"></script>
+  <script type="text/javascript" src="../node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
+  <script type="text/javascript" src="../node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.templates.js"></script>
+
+
+    <script type='text/javascript' src='../bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js'></script>
+
+
+  <script src="js/all.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body ng-app="angularApp" ng-controller="OutsideCtrl">
+
+	<nav class="navbar navbar-inverse" ng-controller="NavCtrl">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Event List</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container" ng-controller="ContentCtrl">
+
+        <div class="row">
+			<form role="form">
+					<div class="form-group">
+                        <label> Sale Start </label>
+                        <div class="dropdown">
+                            <a class="dropdown-toggle toggle-select-sale-start" id="dLabelSaleStart" role="button" data-toggle="dropdown" data-target="#" href="">
+                                <div class="input-append"><input type="text" readonly class="form-control" data-ng-model="saleStartDate"><span class="add-on">
+                                    <i class="icon-calendar"></i></span>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabelSaleStart">
+						        <datetimepicker data-ng-model="saleStartDate" data-datetimepicker-config="{ dropdownSelector: '.toggle-select-sale-start', minView: 'hour' }" data-on-set-time="onTimeSet('sale_start', saleStartDate)"></datetimepicker>
+					        </ul>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label> Date Added </label>
+                        <div class="dropdown">
+                            <a class="dropdown-toggle toggle-select-date-added" id="dLabelDateAdded" role="button" data-toggle="dropdown" data-target="#" href="">
+                                <div class="input-append"><input type="text" readonly class="form-control" data-ng-model="dateAdded"><span class="add-on">
+                                    <i class="icon-calendar"></i></span>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabelDateAdded">
+						        <datetimepicker data-ng-model="dateAdded" data-datetimepicker-config="{ dropdownSelector: '.toggle-select-date-added', minView: 'day' }" data-on-set-time="onDateSet('date_added', dateAdded)"></datetimepicker>
+					        </ul>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="event_name"> Event Name </label>
+                        <input type="event_name" class="form-control" id="event_name" data-ng-model="eventName" ng-change="onTextSet('event_name', eventName)">
+                    </div>
+                    <div class="form-group">
+                        <label for="venue_name"> Venue Name </label>
+                        <input type="venue_name" class="form-control" id="venue_name" data-ng-model="venueName" ng-change="onTextSet('venue_name', venueName)">
+                    </div>
+	        </form>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12">
+                <table class="table" ng-table infinite-scroll='database.nextPage()' infinite-scroll-disabled='database.busy' infinite-scroll-distance='1'>
+                    <tr ng-repeat="event in database.records">
+                         <td data-title="'Event'">
+                             {{ event.event_name }}</td>
+                         <td title="'Event Date'">
+                             {{event.event_date}}</td>
+                         <td title="'Venue Name'">
+                             {{event.venue_name}}</td>
+                         <td title="'City State'">
+                             {{event.city_state}}</td>
+                         <td title="'Sale Name'">
+                             {{event.sale_name}}</td>
+                         <td title="'Price Range'">
+                             {{event.price_range}}</td>
+                         <td title="'Date Added'">
+                             {{event.date_added}}</td>
+                         <td title="'Event Id'">
+                             {{event.event_id}}</td>
+                         <td title="'Tracking'">
+                             {{event.tracking}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+	</div>
+	</body>
+</html>
+

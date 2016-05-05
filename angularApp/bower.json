@@ -1,0 +1,27 @@
+{
+  "name": "tickets_cal",
+  "version": "0.1.0",
+  "authors": [
+    "Matias Kruk<matias.kruk@toptal.com>"
+  ],
+  "description": "Base template for the TicketsCal project",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "angular": "~1.4.0",
+    "ng-table": "^0.8.3",
+    "ng-resource": "^0.0.2",
+    "angular-resource": "^1.5.5",
+    "ngInfiniteScroll": "1.0.0"
+  },
+  "devDependencies": {
+    "angular-ui-table-view": "^0.0.7"
+  }
+}

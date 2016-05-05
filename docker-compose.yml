@@ -1,0 +1,36 @@
+version: '2'
+services:
+  db:
+    image: mysql:5.6
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+  migrate:
+    build: .
+    command: python manage.py migrate
+    depends_on:
+      - db
+  generate_user:
+    build: .
+    command: python htpasswd.py -c -b .htpasswd matias matias
+    volumes_from:
+          - web
+  web:
+    build: .
+    volumes:
+      - .:/code/
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  nginx:
+      build: ./ngnix
+      volumes_from:
+          - web
+      links:
+          - web
+      ports:
+          - "80:80"
