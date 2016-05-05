@@ -1,7 +1,10 @@
-# Requirements:
+# Docker:
 
+## Requirements:
+   ```
    - Docker
    - Docker compose
+   ```
 
 # AngularJS:
 
@@ -12,10 +15,12 @@
    ```
 
 ## Installation:
+   ```
    - cd angularApp/
    - npm install
    - bower install
    - gulp build
+   ```
 
 # Execution:
     - ./run.sh
