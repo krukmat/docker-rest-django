@@ -4,16 +4,14 @@
    - Docker compose
 
 # AngularJS:
-
-   ## Requirements:
-        - npm
-        - bower
-
-   ## Installation:
-        - cd angularApp/
-        - npm install
-        - bower install
-        - gulp build
+## Requirements:
+   - npm
+   - bower
+## Installation:
+   - cd angularApp/
+   - npm install
+   - bower install
+   - gulp build
 
 # Execution:
     - ./run.sh
