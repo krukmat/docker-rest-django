@@ -6,13 +6,11 @@ Requirements:
 AngularJS:
 =========
 
-   Requirements:
-   ------------
+   ### Requirements:
         * npm
         * bower
 
-   Installation:
-   ------------
+   ### Installation:
         * cd angularApp/
         * npm install
         * bower install
@@ -25,5 +23,5 @@ Execution:
 
 Description:
 ===========
-   It's a sample docker django REST application. The frontend is an angularjs app that access to a mysql table through django.
+   It's a sample docker django REST application. The frontend is an angularjs app with bootstrap layout that access to a mysql table through django.
    You're free to change it as you will.
