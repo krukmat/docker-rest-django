@@ -1,27 +1,28 @@
-Requirements:
-============
-   * Docker
-   * Docker compose
+# Requirements:
+  ============
 
-AngularJS:
-=========
+   - Docker
+   - Docker compose
 
-   ### Requirements:
-        * npm
-        * bower
+# AngularJS:
+  =========
 
-   ### Installation:
-        * cd angularApp/
-        * npm install
-        * bower install
-        * gulp build
+   ## Requirements:
+        - npm
+        - bower
 
-Execution:
-=========
-   * ./run.sh
-   * It serves in port 80.
+   ## Installation:
+        - cd angularApp/
+        - npm install
+        - bower install
+        - gulp build
 
-Description:
-===========
+# Execution:
+  =========
+    - ./run.sh
+    - It serves in port 80.
+
+# Description:
+  ===========
    It's a sample docker django REST application. The frontend is an angularjs app with bootstrap layout that access to a mysql table through django.
    You're free to change it as you will.
